@@ -1,4 +1,4 @@
-abstract: Add path_info parser to CGI.
+abstract: Add the feature of parsing path_info to CGI.
 author: Hironori Yoshida, C<< <yoshida@cpan.org> >>
 distribution_type: module
 generated_by: Module::Install version 0.62
@@ -8,4 +8,4 @@ no_index:
   directory: 
     - inc
     - t
-version: 0.01
+version: 0.02

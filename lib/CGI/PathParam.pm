@@ -1,7 +1,7 @@
 #
-# $Revision: 1.3 $
+# $Revision: 1.5 $
 # $Source: /home/cvs/CGI-PathParam/lib/CGI/PathParam.pm,v $
-# $Date: 2006/05/31 23:09:21 $
+# $Date: 2006/06/01 06:23:22 $
 #
 package CGI::PathParam;
 use strict;
@@ -13,11 +13,11 @@ CGI::PathParam - Add the feature of parsing path_info to CGI.
 
 =head1 VERSION
 
-0.02
+0.03
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 =head1 SYNOPSIS
 
@@ -26,11 +26,8 @@ our $VERSION = '0.02';
 
     my $q = CGI->new;
 
-    $q->path_param( qw(foo bar baz) );
-    # same as $q->path_info('/foo/bar/baz')
-
-    my @results = $q->path_param;
-    # @results is ( 'foo', 'bar', 'baz' ).
+    $q->path_param(qw(foo bar baz));    # same as $q->path_info('/foo/bar/baz')
+    my @results = $q->path_param;       # @results is ( 'foo', 'bar', 'baz' ).
 
 =head1 DESCRIPTION
 
@@ -40,7 +37,8 @@ This module adds the feature of parsing PATH_INFO to CGI as a plugin.
 
 =head2 path_param(@)
 
-If the perameter is specified, にゃー
+If the arguments are specified, the values joined by / is set to path_info.
+Otherwise, it returns the list of path_info split.
 
 =cut
 

@@ -1,12 +1,12 @@
 #!/usr/bin/env perl
 #
-# $Revision: 1.2 $
+# $Revision: 1.3 $
 # $Source: /home/cvs/CGI-PathParam/t/CGI-PathParam.t,v $
-# $Date: 2006/05/31 23:09:26 $
+# $Date: 2006/06/01 06:23:24 $
 #
 use strict;
 use warnings;
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use blib;
 use Test::More tests => 17;
@@ -45,7 +45,7 @@ $cgi->path_info('/foo/bar%2Fbaz');
 is_deeply( [ $cgi->path_param ], [ 'foo', 'bar/baz' ], 'mix of / and %2F' );
 
 # setter tests
-$cgi->path_param(undef); # This causes warning of `Use of uninitialized value'
+$cgi->path_param(undef);    # This causes warnings 'uninitialized'.
 is( $cgi->path_info, q{}, 'set an undef' );
 
 $cgi->path_param(q{});

@@ -13,11 +13,11 @@ CGI::PathParam - Add the feature of parsing path_info to CGI.
 
 =head1 VERSION
 
-0.03
+0.04
 
 =cut
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 =head1 SYNOPSIS
 
@@ -66,16 +66,7 @@ sub path_param {
       split m{/}msx, substr $self->path_info, 1;
 }
 
-=head2 import()
-
-import path_param method to CGI package.
-
-=cut
-
-sub import {
-    *CGI::path_param = \&path_param;
-    return;
-}
+*CGI::path_param = \&path_param;
 
 =head1 DIAGNOSTICS
 
